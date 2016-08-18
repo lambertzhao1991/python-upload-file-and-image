@@ -12,12 +12,11 @@ client.timeout=1000000
 import time
 import datetime
 import os
-localtime_str=(datetime.date.today() + datetime.timedelta(days=-1)).strftime("%Y%m%d")
 
 
 def upload_logs(from_logs_path,to_logs_path):
     files=os.listdir(from_logs_path)
-    localtime_str=(datetime.date.today() + datetime.timedelta(days=0)).strftime("%Y%m%d")
+    localtime_str=(datetime.date.today() + datetime.timedelta(days=-1)).strftime("%Y%m%d")
     for file_name in files:
         if localtime_str in file_name:
             print(file_name)
@@ -30,7 +29,7 @@ def upload_logs(from_logs_path,to_logs_path):
 
 def upload_imgs(from_img_path,to_img_path):
     files=os.listdir(from_img_path)
-    localtime_str=(datetime.date.today() + datetime.timedelta(days=0)).strftime("%Y%m%d")
+    localtime_str=(datetime.date.today() + datetime.timedelta(days=-1)).strftime("%Y%m%d")
     for file_name in files:
         if localtime_str in file_name:
             print(file_name)
